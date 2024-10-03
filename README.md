@@ -4,7 +4,7 @@
 
 ## 🌐 Socials:
 <p align="left">
-<a href="https://linkedin.com/in/inkedin.com/in/yashadhikari" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="inkedin.com/in/yashadhikari" height="30" width="40" /></a>
+<a href="https://www.linkedin.com/in/yashadhikari7171/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="inkedin.com/in/yashadhikari" height="30" width="40" /></a>
 <a href="https://instagram.com/deathesther" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="deathesther" height="30" width="40" /></a>
 <a href="https://medium.com/@yashadhikari.medium.com" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/medium.svg" alt="@yashadhikari.medium.com" height="30" width="40" /></a>
 </p> 
