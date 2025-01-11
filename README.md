@@ -2,7 +2,7 @@
 
 💀 Hi, I'm Yash, A Security Analyst
 
-🔭 Currently Researching: Exploring the world of cybersecurity to become a GOD.
+🔭 Currently Researching: Exploring the world of cybersecurity to become a expert.
 
 👽 Skills: Find more on my LinkedIn.
 
