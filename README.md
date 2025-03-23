@@ -1,16 +1,18 @@
 # 💫 About Me:
 
-💀 Hi, I'm Yash, A Security Analyst
+💀 Hey there! I'm Yash, a Cyber Security Analyst.
 
-🔭 Currently Researching: Exploring the world of cybersecurity to become a expert.
+🔎 Currently Exploring: Diving deep into cybersecurity, mastering vulnerability assessments, penetration testing, and digital forensics.
 
-👽 Skills: Find more on my LinkedIn.
+👨‍💻 Passionate About: Bug hunting, solving & creating CTF challenges, and constantly refining my hacking skills.
 
-🧑‍💻 Passion: Hunting bugs and solving/creating CTF challenges to enhance my cybersecurity skills.
+📚 Interests: Cybersecurity, philosophy, literature, and reading thought-provoking books.
 
-⚡ Goal: Continuously seeking to explore and deepen my knowledge in cybersecurity.
+🎮 Beyond Cyber: Playing FPS games to enhance strategic thinking, problem-solving, and teamwork.
 
-🎮 Interests: Playing FPS games to sharpen my problem-solving, strategic thinking, teamwork, communication, focus, and concentration.
+💡 Pro Tip: If AI can't solve it, maybe I can. Feel free to ask!
+
+⚡ Goal: Evolving into an elite cybersecurity expert, always hungry to learn more.
 
 🤔 Fun Fact: I’m still existing. 😊
 
