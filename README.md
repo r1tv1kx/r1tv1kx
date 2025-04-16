@@ -1,4 +1,6 @@
 ## Hi there 👋
+![GitHub Snake Light](https://raw.githubusercontent.com/r1tv1kx/r1tv1kx/output/github-contribution-grid-snake.svg#gh-light-mode-only)
+![GitHub Snake Dark](https://raw.githubusercontent.com/r1tv1kx/r1tv1kx/output/github-contribution-grid-snake-dark.svg#gh-dark-mode-only)
 
 <!--
 **r1tv1kx/r1tv1kx** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
