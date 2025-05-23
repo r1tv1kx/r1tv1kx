@@ -33,7 +33,11 @@
 
 
 
-![snake gif](https://github.com/r1tv1kx/r1tv1kx/blob/output/snake.svg)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/r1tv1kx/r1tv1kx/output/pacman-contribution-graph-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/r1tv1kx/r1tv1kx/output/pacman-contribution-graph.svg">
+  <img alt="pacman contribution graph" src="https://raw.githubusercontent.com/r1tv1kx/r1tv1kx/output/pacman-contribution-graph.svg">
+</picture>
 
 <h3 align="left">Support:</h3>
 <p><a href="https://www.buymeacoffee.com/yashadh"> <img align="left" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50" width="210" alt="yashadh" /></a></p><br><br
