@@ -1,6 +1,6 @@
 # 💫 About Me:
 
-💀 Hey there! I'm Yash, a Cyber Security Analyst.
+💀 Hey there! I'm Ritvik, a Cyber Security Analyst.
 
 🔎 Currently Exploring: Diving deep into cybersecurity, mastering vulnerability assessments, penetration testing, and digital forensics.
 
@@ -33,7 +33,7 @@
 
 
 
-![snake gif](https://github.com/Esther7171/Esther7171/blob/output/snake.svg)
+![snake gif](https://github.com/r1tv1kx/r1tv1kx/blob/output/snake.svg)
 
 <h3 align="left">Support:</h3>
 <p><a href="https://www.buymeacoffee.com/yashadh"> <img align="left" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50" width="210" alt="yashadh" /></a></p><br><br
