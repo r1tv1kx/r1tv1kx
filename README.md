@@ -1,30 +1,30 @@
-# 💫 About Me:
+## About Me
 
-💀 Hey there! I'm Ritvik, a Cyber Security Analyst.
+I’m **Ritvik Singh**, a Cyber Security Analyst with hands-on experience in vulnerability assessment, penetration testing, threat detection, and digital forensics. I focus on ethically identifying weaknesses and strengthening systems with practical, real-world security methods.
 
-🔎 Currently Exploring: Diving deep into cybersecurity, mastering vulnerability assessments, penetration testing, and digital forensics.
+### What I’m Working On
+- Web, network, and mobile security testing  
+- SIEM and SOC operations  
+- Threat intelligence and incident response  
+- Defensive and offensive security tooling  
 
-👨‍💻 Passionate About: Bug hunting, solving & creating CTF challenges, and constantly refining my hacking skills.
+### What Drives Me
+I enjoy solving complex security challenges, exploring exploit development, and creating or participating in CTF challenges. Continuous learning and improvement are central to my approach.
 
-📚 Interests: Cybersecurity, philosophy, literature, and reading thought-provoking books.
+### Beyond Cybersecurity
+I spend time reading philosophy, cybersecurity research, and thought-provoking literature. I also play FPS games to enhance strategy, focus, and team coordination.
 
-🎮 Beyond Cyber: Playing FPS games to enhance strategic thinking, problem-solving, and teamwork.
+### My Approach
+Automation is useful, but deep understanding matters more. If the tools fail, I rely on analysis, creativity, and experience.
 
-💡 Pro Tip: If AI can't solve it, maybe I can. Feel free to ask!
+### Goal
+To grow into a top-tier cybersecurity specialist skilled at countering advanced threats, securing large infrastructures, and contributing to innovative security solutions.
 
-⚡ Goal: Evolving into an elite cybersecurity expert, always hungry to learn more.
-
-🤔 Fun Fact: I’m still existing. 😊
-
-💡 Pro Tip: If AI helps you, but you still can’t find a better way, feel free to ask me.
 
 ## 🌐 Socials:
 <p align="left"><a href="https://www.linkedin.com/in/ritvik-singh-793086294" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="inkedin.com/in/ritviksingh" height="30" width="40" /></a>
 <a href="https://instagram.com/_.ritviksingh._" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="ritviksingh" height="30" width="40" /></a>
 </p>
-
-# 💻 Tech Stack:
- ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)  ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![PowerShell](https://img.shields.io/badge/PowerShell-%235391FE.svg?style=for-the-badge&logo=powershell&logoColor=white) ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![Shell Script](https://img.shields.io/badge/shell_script-%23121011.svg?style=for-the-badge&logo=gnu-bash&logoColor=white) ![Windows Terminal](https://img.shields.io/badge/Windows%20Terminal-%234D4D4D.svg?style=for-the-badge&logo=windows-terminal&logoColor=white)  ![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white) ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white) ![Nodemon](https://img.shields.io/badge/NODEMON-%23323330.svg?style=for-the-badge&logo=nodemon&logoColor=%BBDEAD) ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)![Apache](https://img.shields.io/badge/apache-%23D42029.svg?style=for-the-badge&logo=apache&logoColor=white)![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white) ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white) ![Canva](https://img.shields.io/badge/Canva-%2300C4CC.svg?style=for-the-badge&logo=Canva&logoColor=white)  ![LINUX](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black) ![GIT](https://img.shields.io/badge/Git-fc6d26?style=for-the-badge&logo=git&logoColor=white)
 
 # 🧭 Badges
 <img src="https://github.com/user-attachments/assets/42ced0ee-b9ae-4735-a520-24f34bb86bbd" height="160"></img>
