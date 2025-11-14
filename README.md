@@ -1,24 +1,4 @@
-## About Me
 
-I’m **Ritvik Singh**, a Cyber Security Analyst with hands-on experience in vulnerability assessment, penetration testing, threat detection, and digital forensics. I focus on ethically identifying weaknesses and strengthening systems with practical, real-world security methods.
-
-### What I’m Working On
-- Web, network, and mobile security testing  
-- SIEM and SOC operations  
-- Threat intelligence and incident response  
-- Defensive and offensive security tooling  
-
-### What Drives Me
-I enjoy solving complex security challenges, exploring exploit development, and creating or participating in CTF challenges. Continuous learning and improvement are central to my approach.
-
-### Beyond Cybersecurity
-I spend time reading philosophy, cybersecurity research, and thought-provoking literature. I also play FPS games to enhance strategy, focus, and team coordination.
-
-### My Approach
-Automation is useful, but deep understanding matters more. If the tools fail, I rely on analysis, creativity, and experience.
-
-### Goal
-To grow into a top-tier cybersecurity specialist skilled at countering advanced threats, securing large infrastructures, and contributing to innovative security solutions.
 
 
 ## 🌐 Socials:
