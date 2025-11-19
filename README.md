@@ -1,27 +1,52 @@
+`hi, i'm ritvik.`  
+`cyber security analyst`  
+`4th year b.tech cse student`
+
+`i build systems, secure them, and understand how they fail.`  
+`curiosity drives the work; precision keeps it running.`
+
+![Profile views](https://komarev.com/ghpvc/?username=ritviksingh&base=1000&color=6A5ACD)
+
+---
+
+> [!IMPORTANT]
+> ➜ primary email: `singhritvik1411@gmail.com`  
+> ➜ portfolio: `ritviksingh.in`  
+> ➜ linkedin: [`ritviksingh`](https://www.linkedin.com/in/ritviksingh14/)  
+> ➜ medium: [`ritviksinghx`](https://medium.com/@ritviksinghx)  
+> ➜ github: [`r1tv1kx`](https://github.com/r1tv1kx)
+
+---
+
+> [!NOTE]
+> ➜ discord: [`GunmaN`](https://discord.com/users/391238523501543425)  
+> ➜ steam: [`GunmaN`](https://steamcommunity.com/profiles/76561199080523321/)
+
+
+---
 
 
 
-## 🌐 Socials:
-<p align="left"><a href="https://www.linkedin.com/in/ritvik-singh-793086294" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="inkedin.com/in/ritviksingh" height="30" width="40" /></a>
-<a href="https://instagram.com/_.ritviksingh._" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="ritviksingh" height="30" width="40" /></a>
-</p>
+---
 
-# 🧭 Badges
-<img src="https://github.com/user-attachments/assets/42ced0ee-b9ae-4735-a520-24f34bb86bbd" height="160"></img>
+### Tech Stack
 
+> **Cybersecurity**  
+> Wazuh • MISP • ThreatSpike • IDS/IPS • VirusTotal API • YARA • FIM • SOC workflows
 
+> **Pentesting**  
+> Burp Suite • Metasploit • Nmap • Postman • BloodHound • SharpHound
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/r1tv1kx/r1tv1kx/output/pacman-contribution-graph-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/r1tv1kx/r1tv1kx/output/pacman-contribution-graph.svg">
-  <img alt="pacman contribution graph" src="https://raw.githubusercontent.com/r1tv1kx/r1tv1kx/output/pacman-contribution-graph.svg">
-</picture>
+> **Development**  
+> Python • FastAPI • JavaScript • HTML/CSS • React • Node.js
 
-<!-- <h3 align="left">Support:</h3>
-<p><a href="https://www.buymeacoffee.com/yashadh"> <img align="left" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50" width="210" alt="yashadh" /></a></p><br><br -->
+> **AI / ML**  
+> PyTorch • TensorFlow • Transformers • data preprocessing • model training • LLM fine-tuning
 
-
+> **Tools**  
+> Ubuntu • pfSense • UFW • Firewalld • Docker (basic) • Git • GitHub
 
 
+---
 
 
