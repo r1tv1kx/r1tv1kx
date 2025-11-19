@@ -14,7 +14,6 @@
 > ➜ portfolio: `ritviksingh.in`  
 > ➜ linkedin: [`ritviksingh`](https://www.linkedin.com/in/ritviksingh14/)  
 > ➜ medium: [`ritviksinghx`](https://medium.com/@ritviksinghx)  
-> ➜ github: [`r1tv1kx`](https://github.com/r1tv1kx)
 
 ---
 
