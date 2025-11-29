@@ -31,8 +31,8 @@
 
   <p align="left">
     <a href="https://tryhackme.com/p/ritviksingh" target="_blank" rel="noopener">
-      <!-- use width attribute to constrain; the style attribute may be stripped by GitHub but width is safe -->
-      <img src="./tryhackme_card.svg" alt="TryHackMe card" width="720" />
+      <!-- prefer PNG (always renders); browser will load PNG if present, otherwise SVG -->
+      <img src="./tryhackme_card.png" alt="TryHackMe card" width="720" onerror="this.onerror=null;this.src='./tryhackme_card.svg'"/>
     </a>
   </p>
 
