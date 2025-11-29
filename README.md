@@ -19,8 +19,9 @@
 
 > [!NOTE]
 > ➜ discord: [`GunmaN`](https://discord.com/users/391238523501543425)  
-> ➜ steam: [`GunmaN`](https://steamcommunity.com/profiles/76561199080523321/)
-
+> ➜ steam: [`GunmaN`](https://steamcommunity.com/profiles/76561199080523321/)  
+> ➜ tryhackme: [`ritviksingh`](https://tryhackme.com/p/ritviksingh)  
+> ➜ card: [![TryHackMe](./tryhackme_card.svg)](https://tryhackme.com/p/ritviksingh)
 
 ---
 
