@@ -10,10 +10,10 @@
 ---
 
 > [!IMPORTANT]
-> ➜ primary email: `singhritvik1411@gmail.com`  
-> ➜ portfolio: `ritviksingh.in`(https://www.ritviksingh.in) 
-> ➜ linkedin: [`ritviksingh`](https://www.linkedin.com/in/ritviksingh14/)  
-> ➜ medium: [`ritviksinghx`](https://medium.com/@ritviksinghx)  
+> primary email: [`singhritvik1411@gmail.com`](mailto:singhritvik1411@gmail.com)    
+> **Portfolio:** [`ritviksingh.in`](https://www.ritviksingh.in)  
+> **LinkedIn:** [`ritviksingh`](https://www.linkedin.com/in/ritviksingh14/)  
+> **Medium:** [`ritviksinghx`](https://medium.com/@ritviksinghx)
 
 ---
 
