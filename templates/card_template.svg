@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Jinja2 SVG template -->
+<svg xmlns="http://www.w3.org/2000/svg" width="780" height="330" viewBox="0 0 780 330" role="img" aria-label="TryHackMe card">
+  <style>
+    .bg { fill: #0f1720; }
+    .panel { fill: #14202a; rx: 8; }
+    .muted { fill: #9aa6b2; font-family: Inter, Arial, sans-serif; font-size:14px; }
+    .title { fill: #e6eef6; font-family: Inter, Arial, sans-serif; font-weight:700; font-size:28px; }
+    .big { fill: #00e676; font-family: Inter, Arial, sans-serif; font-weight:700; font-size:40px; }
+    .small { fill: #cbd7df; font-family: Inter, Arial, sans-serif; font-size:16px; }
+    .label { fill: #9aa6b2; font-size:13px; }
+    .box { fill: #0e1620; rx:6; }
+  </style>
+
+  <rect class="bg" width="100%" height="100%"/>
+  <g transform="translate(20,20)">
+    <rect class="panel" x="0" y="0" width="740" height="290" rx="10"/>
+
+    <!-- Left column: avatar + username -->
+    <g transform="translate(20,18)">
+      <circle cx="60" cy="40" r="38" fill="#1e2933"/>
+      <text x="120" y="28" class="title">{{ username }}</text>
+      <text x="120" y="54" class="muted">TryHackMe profile</text>
+      <rect x="120" y="64" width="200" height="2" fill="#1b2832"/>
+    </g>
+
+    <!-- Right column: stats boxes -->
+    <g transform="translate(36,120)">
+      <g transform="translate(0,0)">
+        <rect class="box" x="0" y="0" width="220" height="84"/>
+        <text x="16" y="32" class="label">Rank</text>
+        <text x="16" y="62" class="big">{{ rank_display }}</text>
+      </g>
+
+      <g transform="translate(250,0)">
+        <rect class="box" x="0" y="0" width="220" height="84"/>
+        <text x="16" y="32" class="label">Badges</text>
+        <text x="16" y="62" class="big">{{ badges_display }}</text>
+      </g>
+
+      <g transform="translate(500,0)">
+        <rect class="box" x="0" y="0" width="220" height="84"/>
+        <text x="16" y="32" class="label">Completed rooms</text>
+        <text x="16" y="62" class="big">{{ rooms_display }}</text>
+      </g>
+    </g>
+
+    <!-- footer -->
+    <g transform="translate(36,220)">
+      <text x="0" y="24" class="small">I build systems, secure them, and understand how they fail.</text>
+      <text x="0" y="46" class="muted">Curiosity drives the work; precision keeps it running.</text>
+    </g>
+  </g>
+</svg>
