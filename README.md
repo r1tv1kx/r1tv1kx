@@ -27,13 +27,10 @@
 <details>
   <summary><strong>expand to view my TryHackMe stats</strong></summary>
 
-  <br />
+  <br/>
 
-  <p align="left">
-    <a href="https://tryhackme.com/p/ritviksingh" target="_blank" rel="noopener">
-      <!-- prefer PNG (always renders); browser will load PNG if present, otherwise SVG -->
-      <img src="./tryhackme_card.png" alt="TryHackMe card" width="720" onerror="this.onerror=null;this.src='./tryhackme_card.svg'"/>
-    </a>
+  <p align="center">
+    <img src="./tryhackme_card.png" width="720" alt="TryHackMe card"/>
   </p>
 
 </details>
