@@ -1,4 +1,4 @@
-name: Update TryHackMe card
+name: Update TryHackMe badge (official + png fallback)
 
 on:
   schedule:
@@ -9,32 +9,52 @@ permissions:
   contents: write
 
 jobs:
-  build:
+  update-badge:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.11'
-
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install requests jinja2
-
-      - name: Generate TryHackMe SVG card
+      - name: Set variables
         env:
-          THM_USER: ritviksingh   # <- change if needed
+          THM_USER: ritviksingh   # <- change if you ever need
         run: |
-          python scripts/generate_thm_card.py --username "$THM_USER" --output tryhackme_card.svg
+          echo "THM_USER=$THM_USER" >> $GITHUB_ENV
 
-      - name: Commit & push card if changed
+      - name: Fetch official TryHackMe profile badge SVG
+        env:
+          THM_USER: ${{ env.THM_USER }}
+        run: |
+          BADGE_URL="https://tryhackme.com/badges/profile/${THM_USER}.svg"
+          echo "Downloading badge from: $BADGE_URL"
+          # attempt to download official badge
+          curl -sSfL "$BADGE_URL" -o tryhackme_card.svg || { echo "Failed to download SVG"; exit 0; }
+          # quick sanity check
+          if ! grep -q "<svg" tryhackme_card.svg; then
+            echo "Downloaded file doesn't look like an SVG; aborting save."
+            exit 0
+          fi
+          ls -lh tryhackme_card.svg
+
+      - name: Install rsvg-convert (for PNG fallback)
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y librsvg2-bin
+
+      - name: Convert SVG -> PNG fallback
+        run: |
+          # If the SVG exists, make a PNG copy (GitHub reliably renders PNGs)
+          if [ -f tryhackme_card.svg ]; then
+            rsvg-convert tryhackme_card.svg -w 780 -h 330 -o tryhackme_card.png || true
+            ls -lh tryhackme_card.png || true
+          else
+            echo "No SVG present to convert."
+          fi
+
+      - name: Commit & push badge files if changed
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git add tryhackme_card.svg || true
-          git commit -m "chore: update TryHackMe card" || echo "no changes to commit"
+          git add tryhackme_card.svg tryhackme_card.png || true
+          git commit -m "chore: update TryHackMe badge (svg+png)" || echo "no changes to commit"
           git push || echo "push failed"
