@@ -29,7 +29,7 @@
 
   <br />
 
-  <p align="center">
+  <p align="left">
     <a href="https://tryhackme.com/p/ritviksingh" target="_blank" rel="noopener">
       <!-- use width attribute to constrain; the style attribute may be stripped by GitHub but width is safe -->
       <img src="./tryhackme_card.svg" alt="TryHackMe card" width="720" />
