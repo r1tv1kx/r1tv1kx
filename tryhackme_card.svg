@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="780" height="330" viewBox="0 0 780 330" role="img" aria-label="TryHackMe card">
+  <style>
+    .bg { fill: #0b1220; }
+    .panel { fill: #0f1724; rx: 8; }
+    .muted { fill: #98a6b3; font-family: Inter, Arial, sans-serif; font-size:12px; }
+    .title { fill: #e6eef6; font-family: Inter, Arial, sans-serif; font-weight:700; font-size:26px; }
+    .big { fill: #00e676; font-family: Inter, Arial, sans-serif; font-weight:700; font-size:36px; }
+    .small { fill: #cbd7df; font-family: Inter, Arial, sans-serif; font-size:14px; }
+    .label { fill: #9aa6b2; font-size:12px; }
+    .box { fill: #0d1620; rx:6; }
+    .spark { fill: none; stroke: #ffb26b; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+    .spark_area { fill: rgba(251, 159, 64, 0.06); }
+  </style>
+
+  <rect class="bg" width="100%" height="100%"/>
+  <g transform="translate(20,20)">
+    <rect class="panel" x="0" y="0" width="740" height="290" rx="10"/>
+
+    <!-- Left column: circular metric -->
+    <g transform="translate(36,28)">
+      <!-- circular background -->
+      <circle cx="90" cy="90" r="70" fill="#0b1220" stroke="#1b2a33" stroke-width="8"/>
+      <!-- progress arc (visual only) -->
+      <!-- compute circular slice based on rooms / (rooms+some cap) in script; here we use visual constant -->
+      <circle cx="90" cy="90" r="70" fill="none" stroke="#162a2f" stroke-width="12" />
+      <!-- foreground arc (static length here; keeps layout consistent) -->
+      <path d="M160,90 A70,70 0 1 1 20,90" fill="none" stroke="#00e676" stroke-width="10" stroke-linecap="round" opacity="0.95"/>
+      <text x="90" y="95" text-anchor="middle" class="big">0</text>
+      <text x="90" y="118" text-anchor="middle" class="muted">rooms completed</text>
+    </g>
+
+    <!-- Middle: username and subtitle -->
+    <g transform="translate(220,28)">
+      <text x="0" y="18" class="title">ritviksingh</text>
+      <text x="0" y="40" class="muted">I build systems, secure them, and understand how they fail.</text>
+      <text x="0" y="58" class="muted">Curiosity drives the work; precision keeps it running.</text>
+    </g>
+
+    <!-- Right: stat boxes -->
+    <g transform="translate(220,110)">
+      <g transform="translate(0,0)">
+        <rect class="box" x="0" y="0" width="170" height="78"/>
+        <text x="12" y="24" class="label">Rank</text>
+        <text x="12" y="54" class="big">—</text>
+      </g>
+
+      <g transform="translate(190,0)">
+        <rect class="box" x="0" y="0" width="170" height="78"/>
+        <text x="12" y="24" class="label">Badges</text>
+        <text x="12" y="54" class="big">0</text>
+      </g>
+
+      <g transform="translate(380,0)">
+        <rect class="box" x="0" y="0" width="170" height="78"/>
+        <text x="12" y="24" class="label">Streak</text>
+        <text x="12" y="54" class="big">0</text>
+      </g>
+    </g>
+
+    <!-- Sparkline area -->
+    <g transform="translate(36,220)">
+      <rect x="0" y="0" width="720" height="76" rx="6" fill="#071018"/>
+      <text x="12" y="18" class="muted">activity (recent)</text>
+      <g transform="translate(12,28)">
+        <polyline class="spark" points="0,44 32,44 65,44 98,44 130,44 163,44 196,44 229,44 261,44 294,44 327,44 360,44" />
+        <!-- small area fill below sparkline -->
+        <polyline class="spark_area" points="0,44 32,44 65,44 98,44 130,44 163,44 196,44 229,44 261,44 294,44 327,44 360,44 (720, 44) " opacity="0.06" />
+      </g>
+      <text x="600" y="64" class="muted" text-anchor="end">updated: 2025-11-29 12:01 UTC</text>
+    </g>
+
+  </g>
+</svg>
