@@ -11,7 +11,7 @@
 
 > [!IMPORTANT]
 > ➜ primary email: `singhritvik1411@gmail.com`  
-> ➜ portfolio: `ritviksingh.in`  
+> ➜ portfolio: `ritviksingh.in`(https://www.ritviksingh.in) 
 > ➜ linkedin: [`ritviksingh`](https://www.linkedin.com/in/ritviksingh14/)  
 > ➜ medium: [`ritviksinghx`](https://medium.com/@ritviksinghx)  
 
