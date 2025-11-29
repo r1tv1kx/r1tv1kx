@@ -21,10 +21,22 @@
 > ➜ discord: [`GunmaN`](https://discord.com/users/391238523501543425)  
 > ➜ steam: [`GunmaN`](https://steamcommunity.com/profiles/76561199080523321/)  
 > ➜ tryhackme: [`ritviksingh`](https://tryhackme.com/p/ritviksingh)  
-> ➜ card: [![TryHackMe](./tryhackme_card.svg)](https://tryhackme.com/p/ritviksingh)
 
 ---
 
+<details>
+  <summary><strong>expand to view my TryHackMe stats</strong></summary>
+
+  <br />
+
+  <p align="center">
+    <a href="https://tryhackme.com/p/ritviksingh" target="_blank" rel="noopener">
+      <!-- use width attribute to constrain; the style attribute may be stripped by GitHub but width is safe -->
+      <img src="./tryhackme_card.svg" alt="TryHackMe card" width="720" />
+    </a>
+  </p>
+
+</details>
 
 
 ---
