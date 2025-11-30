@@ -67,7 +67,7 @@
         <!-- small area fill below sparkline -->
         <polyline class="spark_area" points="0,44 32,44 65,44 98,44 130,44 163,44 196,44 229,44 261,44 294,44 327,44 360,44 (720, 44) " opacity="0.06" />
       </g>
-      <text x="600" y="64" class="muted" text-anchor="end">updated: 2025-11-30 01:50 UTC</text>
+      <text x="600" y="64" class="muted" text-anchor="end">updated: 2025-11-30 12:38 UTC</text>
     </g>
 
   </g>
