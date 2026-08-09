@@ -3,14 +3,15 @@
 `4th year b.tech cse student`
 
 `i build systems, secure them, and understand how they fail.`  
-`curiosity drives the work; precision keeps it running.`
+`curiosity drives the work; precision keeps it running.`  
+`blue team by day, break things on purpose when the lab is open.`
 
 ![Profile views](https://komarev.com/ghpvc/?username=ritviksingh&base=1000&color=6A5ACD)
 
 ---
 
 > [!IMPORTANT]
-> primary email: [`singhritvik1411@gmail.com`](mailto:singhritvik1411@gmail.com)    
+> primary email: [`singhritvik1411@gmail.com`](mailto:singhritvik1411@gmail.com)  
 > **Portfolio:** [`ritviksingh.in`](https://www.ritviksingh.in)  
 > **LinkedIn:** [`ritviksingh`](https://www.linkedin.com/in/ritviksingh14/)  
 > **Medium:** [`ritviksinghx`](https://medium.com/@ritviksinghx)
@@ -20,13 +21,28 @@
 > [!NOTE]
 > ➜ discord: [`GunmaN`](https://discord.com/users/391238523501543425)  
 > ➜ steam: [`GunmaN`](https://steamcommunity.com/profiles/76561199080523321/)  
-> ➜ tryhackme: [`ritviksingh`](https://tryhackme.com/p/ritviksingh)  
+> ➜ tryhackme: [`ritviksingh`](https://tryhackme.com/p/ritviksingh)
+
+---
+
+> [!TIP]
+> ➜ now: detection workflows, offensive labs, small python utilities  
+> ➜ writing when something is worth keeping on [`medium`](https://medium.com/@ritviksinghx)
 
 ---
 
 <p align="center">
   <img src="https://github-readme-stats.shion.dev/api?username=r1tv1kx&amp;show_icons=true&amp;include_all_commits=true&amp;hide_border=true&amp;title_color=6A5ACD&amp;icon_color=6A5ACD&amp;text_color=57606a&amp;ring_color=6A5ACD&amp;bg_color=00000000" alt="GitHub stats" />
+  <img src="https://github-readme-stats.shion.dev/api/top-langs/?username=r1tv1kx&amp;layout=compact&amp;hide_border=true&amp;title_color=6A5ACD&amp;text_color=57606a&amp;bg_color=00000000" alt="Top languages" />
 </p>
+
+---
+
+### Focus
+
+> **SOC / detection** — wazuh, misp, fim, log noise into signal  
+> **offensive** — nmap, burp, bloodhound; map paths, prove the gap  
+> **build** — python tools that cut the boring parts of an investigation
 
 ---
 
@@ -47,7 +63,9 @@
 > **Tools**  
 > Ubuntu • pfSense • UFW • Firewalld • Docker (basic) • Git • GitHub
 
-
 ---
 
+`open to chats about security engineering and practical tooling.`  
+`mail: `[`singhritvik1411@gmail.com`](mailto:singhritvik1411@gmail.com)
 
+---
