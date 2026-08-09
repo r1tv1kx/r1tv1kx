@@ -81,12 +81,12 @@
 
 ---
 
-### How i work
+### field notes
 
-> start with the question, not the tool.  
-> reproduce once, automate the second time.  
-> prefer boring detections that fire over clever ones that don't.  
-> document the path — future-you is also an analyst on-call.
+> alerts without context are just noise with better branding.  
+> a clean timeline beats a clever theory.  
+> if you can't explain the detection in one sentence, rewrite it.  
+> labs are for breaking things; production is for proving you learned.
 
 ---
 
