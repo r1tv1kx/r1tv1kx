@@ -24,20 +24,6 @@
 
 ---
 
-<details>
-  <summary><strong>expand to view my TryHackMe stats</strong></summary>
-
-  <br/>
-
-  <p align="center">
-    <img src="./tryhackme_card.png" width="720" alt="TryHackMe card"/>
-  </p>
-
-</details>
-
-
----
-
 ### Tech Stack
 
 > **Cybersecurity**  
