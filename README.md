@@ -24,6 +24,12 @@
 
 ---
 
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=r1tv1kx&show_icons=true&include_all_commits=true&hide_border=true&title_color=6A5ACD&icon_color=6A5ACD&text_color=57606a&ring_color=6A5ACD&bg_color=00000000" alt="GitHub stats" />
+</p>
+
+---
+
 ### Tech Stack
 
 > **Cybersecurity**  
