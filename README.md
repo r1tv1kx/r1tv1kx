@@ -25,7 +25,7 @@
 ---
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=r1tv1kx&show_icons=true&include_all_commits=true&hide_border=true&title_color=6A5ACD&icon_color=6A5ACD&text_color=57606a&ring_color=6A5ACD&bg_color=00000000" alt="GitHub stats" />
+  <img src="https://github-readme-stats.shion.dev/api?username=r1tv1kx&amp;show_icons=true&amp;include_all_commits=true&amp;hide_border=true&amp;title_color=6A5ACD&amp;icon_color=6A5ACD&amp;text_color=57606a&amp;ring_color=6A5ACD&amp;bg_color=00000000" alt="GitHub stats" />
 </p>
 
 ---
