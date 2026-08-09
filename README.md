@@ -38,10 +38,6 @@
   <img src="https://github-readme-stats.shion.dev/api/top-langs/?username=r1tv1kx&amp;layout=compact&amp;hide_border=true&amp;title_color=6A5ACD&amp;text_color=57606a&amp;bg_color=00000000" alt="Top languages" />
 </p>
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/r1tv1kx/r1tv1kx/output/pacman-contribution-graph.svg" width="100%" alt="Contribution graph" />
-</p>
-
 ---
 
 ### Focus
