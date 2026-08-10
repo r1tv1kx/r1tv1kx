@@ -51,12 +51,10 @@
 
 ### Some things i've shipped
 
-> ➜ [`Network-Packet-Sniffer`](https://github.com/r1tv1kx/Network-Packet-Sniffer) — scapy capture + quick inspection  
-> ➜ [`Password-Strength-Checker`](https://github.com/r1tv1kx/Password-Strength-Checker) — rule-based strength scoring  
-> ➜ [`Caesar-Cipher-Encryption-Decryption`](https://github.com/r1tv1kx/Caesar-Cipher-Encryption-Decryption) — classic cipher, built to learn it properly  
-> ➜ [`Pixel-manipulation-for-image-encrypt-decrypt`](https://github.com/r1tv1kx/Pixel-manipulation-for-image-encrypt-decrypt) — image crypto via pixel transforms  
-> ➜ [`GamebyMood`](https://github.com/r1tv1kx/GamebyMood) — mood-based game picks, python backend  
-> ➜ [`Portswiggerlabs`](https://github.com/r1tv1kx/Portswiggerlabs) — web lab notes from the trenches  
+> ➜ [`Sentinel`](https://github.com/r1tv1kx/Sentinel) — plain-english website security scan, subdomains, fake-link checks  
+> ➜ [`safesphere`](https://github.com/r1tv1kx/safesphere) — personal ai cybersecurity: think before you click  
+> ➜ [`DLP`](https://github.com/r1tv1kx/DLP) — enterprise data loss prevention architecture and design  
+> ➜ [`digispark-hid-attack-lab`](https://github.com/r1tv1kx/digispark-hid-attack-lab) — digispark hid lab for defensive awareness (SilentStrike)  
 
 `more on `[`github.com/r1tv1kx`](https://github.com/r1tv1kx?tab=repositories)` and `[`ritviksingh.in`](https://www.ritviksingh.in)
 
