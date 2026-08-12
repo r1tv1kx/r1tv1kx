@@ -18,6 +18,8 @@ OUT = ROOT / "valorant_card.svg"
 STATS_FILE = ROOT / "valorant_stats.json"
 PEAK_FILE = ROOT / "valorant_peak.json"
 
+FONT = "ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif"
+
 RANK_ORDER: list[str] = []
 for tier in (
     "Iron",
@@ -85,60 +87,162 @@ def fmt_int(n: int) -> str:
     return f"{n:,}"
 
 
+def text(
+    x: float,
+    y: float,
+    content: object,
+    *,
+    fill: str,
+    size: int,
+    weight: str | None = None,
+    anchor: str | None = None,
+    tracking: str | None = None,
+) -> str:
+    attrs = [
+        f'x="{x}"',
+        f'y="{y}"',
+        f'fill="{fill}"',
+        f'font-family="{FONT}"',
+        f'font-size="{size}"',
+    ]
+    if weight:
+        attrs.append(f'font-weight="{weight}"')
+    if anchor:
+        attrs.append(f'text-anchor="{anchor}"')
+    if tracking:
+        attrs.append(f'letter-spacing="{tracking}"')
+    return f"  <text {' '.join(attrs)}>{content}</text>"
+
+
+def metric(x: float, label_y: float, value_y: float, label: str, value: object) -> str:
+    return "\n".join(
+        [
+            text(x, label_y, label, fill="#6A737C", size=11),
+            text(x, value_y, value, fill="#F4F0EA", size=20, weight="600"),
+        ]
+    )
+
+
 def render(rank: str, rr: int, peak_rank: str, peak_act: str, s: dict) -> str:
-    hours = fmt_int(int(s["hours"]))
-    matches = fmt_int(int(s["matches"]))
-    level = int(s["level"])
-    kd = s["kd"]
-    acs = s["acs"]
-    win = s["win_pct"]
-    hs = s["hs"]
-    agent = s.get("top_agent", "—")
-    kills = fmt_int(int(s["kills"]))
+    w, h = 720, 430
+    agents = s.get("agents") or []
+    premier = s.get("premier", "")
+    ddelta = int(s.get("ddelta", 0))
+    ddelta_s = f"+{ddelta}" if ddelta > 0 else str(ddelta)
 
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="640" height="210" viewBox="0 0 640 210" role="img" aria-label="Valorant stats for {NAME}#{TAG}">
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#0C1014"/>
-      <stop offset="100%" stop-color="#12181F"/>
-    </linearGradient>
-  </defs>
+    hero = [
+        ("dmg/r", s["adr"]),
+        ("k/d", s["kd"]),
+        ("hs%", s["hs"]),
+        ("win%", s["win_pct"]),
+        ("acs", s["acs"]),
+    ]
+    row_a = [
+        ("kast", s["kast"]),
+        ("ddΔ", ddelta_s),
+        ("kad", s["kad"]),
+        ("k/r", s["kpr"]),
+        ("1v1", fmt_int(int(s["clutches"]))),
+        ("flawless", fmt_int(int(s["flawless"]))),
+    ]
+    row_b = [
+        ("kills", fmt_int(int(s["kills"]))),
+        ("deaths", fmt_int(int(s["deaths"]))),
+        ("assists", fmt_int(int(s["assists"]))),
+    ]
 
-  <rect width="640" height="210" rx="12" fill="url(#bg)"/>
-  <rect x="0.6" y="0.6" width="638.8" height="208.8" rx="12" fill="none" stroke="#1E262E" stroke-width="1"/>
-  <circle cx="24" cy="28" r="3" fill="#FF4655"/>
+    parts: list[str] = [
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img" aria-label="Valorant stats for {NAME}#{TAG}">',
+        "  <defs>",
+        '    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">',
+        '      <stop offset="0%" stop-color="#0C1014"/>',
+        '      <stop offset="100%" stop-color="#12181F"/>',
+        "    </linearGradient>",
+        "  </defs>",
+        "",
+        f'  <rect width="{w}" height="{h}" rx="12" fill="url(#bg)"/>',
+        f'  <rect x="0.6" y="0.6" width="{w - 1.2}" height="{h - 1.2}" rx="12" fill="none" stroke="#1E262E" stroke-width="1"/>',
+        '  <circle cx="24" cy="28" r="3" fill="#FF4655"/>',
+        "",
+        text(38, 32, "valorant · competitive", fill="#8A939C", size=12, tracking="0.4"),
+        text(w - 24, 32, f"{NAME}#{TAG}", fill="#D8DEE5", size=13, weight="600", anchor="end"),
+        "",
+        text(28, 82, rank, fill="#F4F0EA", size=34, weight="600", tracking="-0.6"),
+        text(200, 82, rr, fill="#FF4655", size=34, weight="600", tracking="-0.6"),
+        text(268, 82, "rr", fill="#6A737C", size=13),
+        "",
+        text(w - 24, 66, "peak", fill="#6A737C", size=11, anchor="end"),
+        text(w - 24, 88, peak_rank, fill="#D8DEE5", size=16, weight="600", anchor="end"),
+        text(w - 24, 106, peak_act, fill="#6A737C", size=11, anchor="end"),
+        "",
+        f'  <line x1="28" y1="122" x2="{w - 28}" y2="122" stroke="#1C242C" stroke-width="1"/>',
+        "",
+    ]
 
-  <text x="38" y="32" fill="#8A939C" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="12" letter-spacing="0.4">valorant · competitive</text>
-  <text x="616" y="32" text-anchor="end" fill="#D8DEE5" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="13" font-weight="600">{NAME}#{TAG}</text>
+    for i, (label, value) in enumerate(hero):
+        parts.append(metric(28 + i * 92, 148, 172, label, value))
 
-  <text x="28" y="84" fill="#F4F0EA" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="34" font-weight="600" letter-spacing="-0.6">{rank}</text>
-  <text x="210" y="84" fill="#FF4655" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="34" font-weight="600" letter-spacing="-0.6">{rr}</text>
-  <text x="290" y="84" fill="#6A737C" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="13">rr</text>
+    parts.extend(
+        [
+            text(w - 24, 148, "record", fill="#6A737C", size=11, anchor="end"),
+            text(
+                w - 24,
+                172,
+                f"{fmt_int(int(s['wins']))}W · {fmt_int(int(s['losses']))}L",
+                fill="#F4F0EA",
+                size=16,
+                weight="600",
+                anchor="end",
+            ),
+            "",
+            f'  <line x1="28" y1="192" x2="{w - 28}" y2="192" stroke="#1C242C" stroke-width="1"/>',
+            "",
+        ]
+    )
 
-  <text x="616" y="68" text-anchor="end" fill="#6A737C" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="11">peak</text>
-  <text x="616" y="90" text-anchor="end" fill="#D8DEE5" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="16" font-weight="600">{peak_rank}</text>
-  <text x="616" y="108" text-anchor="end" fill="#6A737C" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="11">{peak_act}</text>
+    for i, (label, value) in enumerate(row_a):
+        parts.append(metric(28 + i * 112, 218, 240, label, value))
 
-  <line x1="28" y1="122" x2="612" y2="122" stroke="#1C242C" stroke-width="1"/>
+    for i, (label, value) in enumerate(row_b):
+        parts.append(metric(28 + i * 140, 268, 290, label, value))
 
-  <text x="28" y="152" fill="#6A737C" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="11">k/d</text>
-  <text x="28" y="176" fill="#F4F0EA" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="22" font-weight="600">{kd}</text>
+    parts.extend(
+        [
+            "",
+            f'  <line x1="28" y1="308" x2="{w - 28}" y2="308" stroke="#1C242C" stroke-width="1"/>',
+            "",
+            text(28, 330, "top agents", fill="#6A737C", size=11, tracking="0.3"),
+            "",
+        ]
+    )
 
-  <text x="120" y="152" fill="#6A737C" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="11">acs</text>
-  <text x="120" y="176" fill="#F4F0EA" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="22" font-weight="600">{acs}</text>
+    for i, agent in enumerate(agents[:3]):
+        y = 354 + i * 20
+        name = agent["name"]
+        detail = (
+            f"{agent['hours']}h · {fmt_int(int(agent['matches']))}  ·  "
+            f"{agent['win_pct']}% wr  ·  {float(agent['kd']):.2f} kd  ·  "
+            f"{agent['best_map']} {agent['best_map_wr']}%"
+        )
+        parts.append(text(28, y, name, fill="#D8DEE5", size=13, weight="600"))
+        parts.append(text(100, y, detail, fill="#8A939C", size=12))
 
-  <text x="220" y="152" fill="#6A737C" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="11">win%</text>
-  <text x="220" y="176" fill="#F4F0EA" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="22" font-weight="600">{win}</text>
+    footer = (
+        f"lvl {int(s['level'])}  ·  {fmt_int(int(s['hours']))}h  ·  "
+        f"{fmt_int(int(s['matches']))} matches"
+    )
+    if premier:
+        footer += f"  ·  {premier}"
 
-  <text x="320" y="152" fill="#6A737C" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="11">hs%</text>
-  <text x="320" y="176" fill="#F4F0EA" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="22" font-weight="600">{hs}</text>
-
-  <text x="420" y="152" fill="#6A737C" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="11">kills</text>
-  <text x="420" y="176" fill="#F4F0EA" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="22" font-weight="600">{kills}</text>
-
-  <text x="28" y="198" fill="#5A636C" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="11">lvl {level}  ·  {hours}h  ·  {matches} matches  ·  main {agent.lower()}</text>
-</svg>
-'''
+    parts.extend(
+        [
+            "",
+            text(28, h - 16, footer, fill="#5A636C", size=11),
+            "</svg>",
+            "",
+        ]
+    )
+    return "\n".join(parts)
 
 
 def main() -> None:

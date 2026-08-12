@@ -14,8 +14,42 @@
   "kast": 73.0,
   "acs": 262.1,
   "kad": 1.59,
+  "kpr": 0.9,
+  "ddelta": 21,
   "kills": 36578,
   "deaths": 28663,
   "assists": 9063,
-  "top_agent": "Reyna"
+  "clutches": 496,
+  "flawless": 1454,
+  "top_agent": "Reyna",
+  "premier": "CYRIX #Cx",
+  "agents": [
+    {
+      "name": "Reyna",
+      "hours": 468,
+      "matches": 796,
+      "win_pct": 51.9,
+      "kd": 1.40,
+      "best_map": "Ascent",
+      "best_map_wr": 62
+    },
+    {
+      "name": "Sage",
+      "hours": 219,
+      "matches": 374,
+      "win_pct": 53.2,
+      "kd": 1.18,
+      "best_map": "Ascent",
+      "best_map_wr": 57
+    },
+    {
+      "name": "Jett",
+      "hours": 87,
+      "matches": 149,
+      "win_pct": 46.3,
+      "kd": 1.35,
+      "best_map": "Lotus",
+      "best_map_wr": 64
+    }
+  ]
 }

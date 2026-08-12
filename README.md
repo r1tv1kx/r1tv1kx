@@ -117,7 +117,7 @@
 
 <p align="center">
   <a href="https://tracker.gg/valorant/profile/riot/GunmaN%231803/overview">
-    <img src="./valorant_card.svg" width="640" alt="Valorant stats — GunmaN#1803" />
+    <img src="./valorant_card.svg" width="720" alt="Valorant stats — GunmaN#1803" />
   </a>
 </p>
 
