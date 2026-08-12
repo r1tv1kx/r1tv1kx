@@ -113,14 +113,11 @@
 
 ### hobbies
 
-> **valorant** — competitive queues as [`GunmaN#1803`](https://tracker.gg/valorant/profile/riot/GunmaN%231803/overview) · ap · gold grind  
-> **steam** — nights on [`GunmaN`](https://steamcommunity.com/profiles/76561199080523321/)  
-> **labs** — tryhackme rooms when the brain wants puzzles, not tickets  
-> **writeups** — short posts when a round or a lab teaches something sticky  
+> **valorant** — competitive as [`GunmaN#1803`](https://tracker.gg/valorant/profile/riot/GunmaN%231803/overview)
 
 <p align="center">
   <a href="https://tracker.gg/valorant/profile/riot/GunmaN%231803/overview">
-    <img src="./valorant_card.svg" width="420" alt="Valorant stats — GunmaN#1803" />
+    <img src="./valorant_card.svg" width="560" alt="Valorant stats — GunmaN#1803" />
   </a>
 </p>
 

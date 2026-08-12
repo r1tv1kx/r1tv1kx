@@ -28,6 +28,6 @@ jobs:
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git add valorant_card.svg
+          git add valorant_card.svg valorant_peak.json
           git commit -m "Update Valorant card" || echo "No changes"
           git push
