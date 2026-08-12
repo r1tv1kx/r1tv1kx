@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fetch Valorant MMR and regenerate valorant_card.svg with peak tracking."""
+"""Fetch live Valorant MMR and render an elegant stats card."""
 
 from __future__ import annotations
 
@@ -15,10 +15,10 @@ API = f"https://api.kyroskoh.xyz/valorant/v1/mmr/{REGION}/{NAME}/{TAG}"
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "valorant_card.svg"
+STATS_FILE = ROOT / "valorant_stats.json"
 PEAK_FILE = ROOT / "valorant_peak.json"
 
-# Lowest -> highest. Used to keep lifetime peak without an official peak API.
-RANK_ORDER = []
+RANK_ORDER: list[str] = []
 for tier in (
     "Iron",
     "Bronze",
@@ -55,66 +55,104 @@ def fetch_mmr() -> tuple[str, int]:
     return m.group(1).strip(), int(m.group(2))
 
 
-def load_peak() -> dict:
-    if PEAK_FILE.exists():
-        return json.loads(PEAK_FILE.read_text(encoding="utf-8"))
-    return {}
+def load_json(path: Path, default: dict) -> dict:
+    if path.exists():
+        return json.loads(path.read_text(encoding="utf-8"))
+    return dict(default)
 
 
-def save_peak(peak_rank: str, peak_rr: int) -> None:
-    PEAK_FILE.write_text(
-        json.dumps({"peak_rank": peak_rank, "peak_rr": peak_rr}, indent=2) + "\n",
-        encoding="utf-8",
-    )
+def save_json(path: Path, data: dict) -> None:
+    path.write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8")
 
 
-def resolve_peak(current_rank: str, current_rr: int) -> tuple[str, int]:
-    peak = load_peak()
-    peak_rank = peak.get("peak_rank", current_rank)
-    peak_rr = int(peak.get("peak_rr", current_rr))
+def resolve_peak(stats: dict, current_rank: str, current_rr: int) -> tuple[str, str]:
+    peak = load_json(PEAK_FILE, {})
+    peak_rank = peak.get("peak_rank") or stats.get("peak_rank") or current_rank
+    peak_rr = int(peak.get("peak_rr", stats.get("peak_rr", 0)) or 0)
+    peak_act = peak.get("peak_act") or stats.get("peak_act") or ""
+
     if rank_score(current_rank, current_rr) > rank_score(peak_rank, peak_rr):
         peak_rank, peak_rr = current_rank, current_rr
-    save_peak(peak_rank, peak_rr)
-    return peak_rank, peak_rr
+
+    save_json(
+        PEAK_FILE,
+        {"peak_rank": peak_rank, "peak_rr": peak_rr, "peak_act": peak_act},
+    )
+    return peak_rank, peak_act
 
 
-def render(rank: str, rr: int, peak_rank: str, peak_rr: int) -> str:
-    peak_rr_label = str(peak_rr) if peak_rr > 0 else "—"
-    # Soft RR meter (subtle, not loud)
-    fill = max(6, min(100, rr)) * 1.8
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="520" height="168" viewBox="0 0 520 168" role="img" aria-label="Valorant stats for {NAME}#{TAG}">
+def fmt_int(n: int) -> str:
+    return f"{n:,}"
+
+
+def render(rank: str, rr: int, peak_rank: str, peak_act: str, s: dict) -> str:
+    hours = fmt_int(int(s["hours"]))
+    matches = fmt_int(int(s["matches"]))
+    level = int(s["level"])
+    kd = s["kd"]
+    acs = s["acs"]
+    win = s["win_pct"]
+    hs = s["hs"]
+    agent = s.get("top_agent", "—")
+    kills = fmt_int(int(s["kills"]))
+
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="640" height="210" viewBox="0 0 640 210" role="img" aria-label="Valorant stats for {NAME}#{TAG}">
   <defs>
-    <linearGradient id="card" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#12171D"/>
-      <stop offset="100%" stop-color="#0E1318"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0C1014"/>
+      <stop offset="100%" stop-color="#12181F"/>
     </linearGradient>
   </defs>
 
-  <rect width="520" height="168" rx="10" fill="url(#card)"/>
-  <rect x="0.5" y="0.5" width="519" height="167" rx="10" fill="none" stroke="#232A32" stroke-width="1"/>
-  <rect x="0" y="18" width="3" height="132" fill="#FF4655" opacity="0.85"/>
+  <rect width="640" height="210" rx="12" fill="url(#bg)"/>
+  <rect x="0.6" y="0.6" width="638.8" height="208.8" rx="12" fill="none" stroke="#1E262E" stroke-width="1"/>
+  <circle cx="24" cy="28" r="3" fill="#FF4655"/>
 
-  <text x="28" y="36" fill="#6B737C" font-family="Georgia, 'Times New Roman', serif" font-size="12" font-style="italic">valorant</text>
-  <text x="492" y="36" text-anchor="end" fill="#9AA3AD" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="12">{NAME}#{TAG} · {REGION.upper()}</text>
+  <text x="38" y="32" fill="#8A939C" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="12" letter-spacing="0.4">valorant · competitive</text>
+  <text x="616" y="32" text-anchor="end" fill="#D8DEE5" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="13" font-weight="600">{NAME}#{TAG}</text>
 
-  <text x="28" y="92" fill="#F2EDE6" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="36" font-weight="560" letter-spacing="-0.5">{rank}</text>
-  <text x="492" y="78" text-anchor="end" fill="#6B737C" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="11" letter-spacing="1">RR</text>
-  <text x="492" y="112" text-anchor="end" fill="#F2EDE6" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="36" font-weight="560" letter-spacing="-0.5">{rr}</text>
+  <text x="28" y="84" fill="#F4F0EA" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="34" font-weight="600" letter-spacing="-0.6">{rank}</text>
+  <text x="210" y="84" fill="#FF4655" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="34" font-weight="600" letter-spacing="-0.6">{rr}</text>
+  <text x="290" y="84" fill="#6A737C" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="13">rr</text>
 
-  <rect x="28" y="108" width="180" height="2" rx="1" fill="#1C232B"/>
-  <rect x="28" y="108" width="{fill:.1f}" height="2" rx="1" fill="#FF4655" opacity="0.7"/>
+  <text x="616" y="68" text-anchor="end" fill="#6A737C" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="11">peak</text>
+  <text x="616" y="90" text-anchor="end" fill="#D8DEE5" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="16" font-weight="600">{peak_rank}</text>
+  <text x="616" y="108" text-anchor="end" fill="#6A737C" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="11">{peak_act}</text>
 
-  <text x="28" y="148" fill="#6B737C" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="12">peak  <tspan fill="#D7DDE4" font-weight="600">{peak_rank}</tspan></text>
-  <text x="492" y="148" text-anchor="end" fill="#6B737C" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="12">peak rr  <tspan fill="#D7DDE4" font-weight="600">{peak_rr_label}</tspan></text>
+  <line x1="28" y1="122" x2="612" y2="122" stroke="#1C242C" stroke-width="1"/>
+
+  <text x="28" y="152" fill="#6A737C" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="11">k/d</text>
+  <text x="28" y="176" fill="#F4F0EA" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="22" font-weight="600">{kd}</text>
+
+  <text x="120" y="152" fill="#6A737C" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="11">acs</text>
+  <text x="120" y="176" fill="#F4F0EA" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="22" font-weight="600">{acs}</text>
+
+  <text x="220" y="152" fill="#6A737C" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="11">win%</text>
+  <text x="220" y="176" fill="#F4F0EA" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="22" font-weight="600">{win}</text>
+
+  <text x="320" y="152" fill="#6A737C" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="11">hs%</text>
+  <text x="320" y="176" fill="#F4F0EA" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="22" font-weight="600">{hs}</text>
+
+  <text x="420" y="152" fill="#6A737C" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="11">kills</text>
+  <text x="420" y="176" fill="#F4F0EA" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="22" font-weight="600">{kills}</text>
+
+  <text x="28" y="198" fill="#5A636C" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="11">lvl {level}  ·  {hours}h  ·  {matches} matches  ·  main {agent.lower()}</text>
 </svg>
 '''
 
 
 def main() -> None:
+    stats = load_json(STATS_FILE, {})
+    if not stats:
+        raise SystemExit(f"Missing stats file: {STATS_FILE}")
+
     rank, rr = fetch_mmr()
-    peak_rank, peak_rr = resolve_peak(rank, rr)
-    OUT.write_text(render(rank, rr, peak_rank, peak_rr), encoding="utf-8")
-    print(f"Wrote {OUT} -> current {rank}/{rr} RR | peak {peak_rank}/{peak_rr} RR")
+    peak_rank, peak_act = resolve_peak(stats, rank, rr)
+    OUT.write_text(render(rank, rr, peak_rank, peak_act, stats), encoding="utf-8")
+    print(
+        f"Wrote {OUT} -> {rank}/{rr} RR | peak {peak_rank}"
+        + (f" ({peak_act})" if peak_act else "")
+    )
 
 
 if __name__ == "__main__":
