@@ -26,8 +26,7 @@
 > [!NOTE]
 > ➜ discord: [`GunmaN`](https://discord.com/users/391238523501543425)  
 > ➜ steam: [`GunmaN`](https://steamcommunity.com/profiles/76561199080523321/)  
-> ➜ tryhackme: [`ritviksingh`](https://tryhackme.com/p/ritviksingh)  
-> ➜ valorant: [`GunmaN#1803`](https://tracker.gg/valorant/profile/riot/GunmaN%231803/overview)
+> ➜ tryhackme: [`ritviksingh`](https://tryhackme.com/p/ritviksingh)
 
 ---
 
@@ -111,7 +110,8 @@
 
 ---
 
-### hobbies
+<details>
+<summary>hobbies</summary>
 
 > **valorant** — [`GunmaN#1803`](https://tracker.gg/valorant/profile/riot/GunmaN%231803/overview)
 
@@ -120,6 +120,8 @@
     <img src="./valorant_card.svg" width="720" alt="Valorant stats — GunmaN#1803" />
   </a>
 </p>
+
+</details>
 
 ---
 
