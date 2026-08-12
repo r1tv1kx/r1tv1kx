@@ -34,8 +34,16 @@
 ---
 
 <p align="center">
-  <img src="https://github-readme-stats.shion.dev/api?username=r1tv1kx&amp;show_icons=true&amp;include_all_commits=true&amp;hide_border=true&amp;title_color=6A5ACD&amp;icon_color=6A5ACD&amp;text_color=57606a&amp;ring_color=6A5ACD&amp;bg_color=00000000" alt="GitHub stats" />
-  <img src="https://github-readme-stats.shion.dev/api/top-langs/?username=r1tv1kx&amp;layout=compact&amp;hide_border=true&amp;title_color=6A5ACD&amp;text_color=57606a&amp;bg_color=00000000" alt="Top languages" />
+  <img src="https://github-readme-stats.shion.dev/api?username=r1tv1kx&amp;show_icons=true&amp;include_all_commits=true&amp;count_private=true&amp;show=reviews,prs_merged&amp;hide_border=true&amp;title_color=6A5ACD&amp;icon_color=6A5ACD&amp;text_color=57606a&amp;ring_color=6A5ACD&amp;bg_color=00000000" alt="GitHub stats" />
+  <img src="https://github-readme-stats.shion.dev/api/top-langs/?username=r1tv1kx&amp;layout=compact&amp;langs_count=6&amp;hide_border=true&amp;title_color=6A5ACD&amp;text_color=57606a&amp;bg_color=00000000" alt="Top languages" />
+</p>
+
+<p align="center">
+  <img src="https://streak-stats.demolab.com?user=r1tv1kx&amp;theme=dark&amp;hide_border=true&amp;background=00000000&amp;ring=6A5ACD&amp;fire=6A5ACD&amp;currStreakLabel=6A5ACD&amp;sideLabels=6A5ACD&amp;currStreakNum=c9d1d9&amp;sideNums=c9d1d9&amp;dates=57606a" alt="GitHub streak" />
+</p>
+
+<p align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=r1tv1kx&amp;bg_color=00000000&amp;color=6A5ACD&amp;line=6A5ACD&amp;point=8a7cc9&amp;area=true&amp;area_color=6A5ACD&amp;hide_border=true&amp;custom_title=contribution%20activity" width="100%" alt="Contribution activity" />
 </p>
 
 ---
