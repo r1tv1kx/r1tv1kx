@@ -26,10 +26,12 @@
 
 ---
 
-> [!TIP]
-> ➜ now: detection workflows, offensive labs, small python utilities  
-> ➜ writing when something is worth keeping on [`medium`](https://medium.com/@ritviksinghx)  
-> ➜ always open to a good packet capture and a better detection rule
+### currently
+
+> building and hardening [`Sentinel`](https://github.com/r1tv1kx/Sentinel) + [`safesphere`](https://github.com/r1tv1kx/safesphere)  
+> designing the [`DLP`](https://github.com/r1tv1kx/DLP) architecture end to end  
+> running hid / blue-team labs in [`digispark-hid-attack-lab`](https://github.com/r1tv1kx/digispark-hid-attack-lab)  
+> writing when a finding is worth keeping on [`medium`](https://medium.com/@ritviksinghx)
 
 ---
 
@@ -40,10 +42,6 @@
 
 <p align="center">
   <img src="https://streak-stats.demolab.com?user=r1tv1kx&amp;theme=dark&amp;hide_border=true&amp;background=00000000&amp;ring=6A5ACD&amp;fire=6A5ACD&amp;currStreakLabel=6A5ACD&amp;sideLabels=6A5ACD&amp;currStreakNum=c9d1d9&amp;sideNums=c9d1d9&amp;dates=57606a" alt="GitHub streak" />
-</p>
-
-<p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=r1tv1kx&amp;theme=onedark&amp;no-frame=true&amp;no-bg=true&amp;column=4&amp;margin-w=12&amp;margin-h=8" alt="GitHub trophies" />
 </p>
 
 <p align="center">
@@ -108,16 +106,12 @@
 
 ---
 
-### field notes
+### looking for
 
-> alerts without context are just noise with better branding.  
-> a clean timeline beats a clever theory.  
-> if you can't explain the detection in one sentence, rewrite it.  
-> labs are for breaking things; production is for proving you learned.
+> security engineering / soc / purple-team conversations  
+> feedback on detection design and practical tooling  
+> collaborators who like building things that earn their keep  
 
----
-
-`open to chats about security engineering and practical tooling.`  
-`mail: `[`singhritvik1411@gmail.com`](mailto:singhritvik1411@gmail.com)
+`mail: `[`singhritvik1411@gmail.com`](mailto:singhritvik1411@gmail.com)` · `[`ritviksingh.in`](https://www.ritviksingh.in)
 
 ---
