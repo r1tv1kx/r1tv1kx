@@ -8,15 +8,10 @@
 `if a control looks solid on paper, i still want the packet that proves it.`
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&amp;weight=500&amp;size=18&amp;pause=1400&amp;color=6A5ACD&amp;center=true&amp;vCenter=true&amp;width=680&amp;lines=detection+engineering+%C2%B7+soc+workflows;offensive+labs+%C2%B7+attack+path+mapping;build.+break.+harden." alt="typing tagline" />
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&amp;weight=500&amp;size=17&amp;pause=1800&amp;color=6A5ACD&amp;center=true&amp;vCenter=true&amp;width=720&amp;height=50&amp;lines=The+best+defense+is+a+good+detection.;First%2C+solve+the+problem.+Then%2C+write+the+code.;Amateurs+hack+systems.+Professionals+hack+people.;Talk+is+cheap.+Show+me+the+code.;Security+is+a+process%2C+not+a+product.;Code+is+like+humor.+When+you+have+to+explain+it%2C+it%27s+bad." alt="quotes" />
 </p>
 
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=ritviksingh&base=1000&color=6A5ACD" alt="Profile views" />
-  <img src="https://img.shields.io/github/followers/r1tv1kx?label=followers&amp;style=flat&amp;color=6A5ACD&amp;labelColor=0d1117" alt="Followers" />
-  <img src="https://img.shields.io/github/stars/r1tv1kx?affiliations=OWNER&amp;label=stars&amp;style=flat&amp;color=6A5ACD&amp;labelColor=0d1117" alt="Stars" />
-  <img src="https://img.shields.io/badge/tryhackme-ritviksingh-6A5ACD?style=flat&amp;labelColor=0d1117" alt="TryHackMe" />
-</p>
+![Profile views](https://komarev.com/ghpvc/?username=ritviksingh&base=1000&color=6A5ACD)
 
 ---
 
