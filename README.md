@@ -113,11 +113,11 @@
 
 ### hobbies
 
-> **valorant** — competitive as [`GunmaN#1803`](https://tracker.gg/valorant/profile/riot/GunmaN%231803/overview)
+> **valorant** — [`GunmaN#1803`](https://tracker.gg/valorant/profile/riot/GunmaN%231803/overview)
 
 <p align="center">
   <a href="https://tracker.gg/valorant/profile/riot/GunmaN%231803/overview">
-    <img src="./valorant_card.svg" width="560" alt="Valorant stats — GunmaN#1803" />
+    <img src="./valorant_card.svg" width="520" alt="Valorant stats — GunmaN#1803" />
   </a>
 </p>
 

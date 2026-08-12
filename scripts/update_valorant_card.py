@@ -79,56 +79,33 @@ def resolve_peak(current_rank: str, current_rr: int) -> tuple[str, int]:
 
 
 def render(rank: str, rr: int, peak_rank: str, peak_rr: int) -> str:
-    # Competitive RR bar (0-100)
-    bar_w = max(4, min(100, rr)) * 2.4  # up to 240px
     peak_rr_label = str(peak_rr) if peak_rr > 0 else "—"
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="560" height="200" viewBox="0 0 560 200" role="img" aria-label="Valorant stats for {NAME}#{TAG}">
+    # Soft RR meter (subtle, not loud)
+    fill = max(6, min(100, rr)) * 1.8
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="520" height="168" viewBox="0 0 520 168" role="img" aria-label="Valorant stats for {NAME}#{TAG}">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#0B1218"/>
-      <stop offset="100%" stop-color="#151C24"/>
-    </linearGradient>
-    <linearGradient id="red" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#FF4655"/>
-      <stop offset="100%" stop-color="#FF6A75"/>
-    </linearGradient>
-    <linearGradient id="barTrack" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#1A222C"/>
-      <stop offset="100%" stop-color="#222B36"/>
+    <linearGradient id="card" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#12171D"/>
+      <stop offset="100%" stop-color="#0E1318"/>
     </linearGradient>
   </defs>
 
-  <!-- frame -->
-  <rect width="560" height="200" rx="2" fill="url(#bg)"/>
-  <path d="M0,0 H560 L548,12 H12 Z" fill="#FF4655" opacity="0.9"/>
-  <rect x="1" y="1" width="558" height="198" rx="2" fill="none" stroke="#2A3340" stroke-width="1"/>
+  <rect width="520" height="168" rx="10" fill="url(#card)"/>
+  <rect x="0.5" y="0.5" width="519" height="167" rx="10" fill="none" stroke="#232A32" stroke-width="1"/>
+  <rect x="0" y="18" width="3" height="132" fill="#FF4655" opacity="0.85"/>
 
-  <!-- identity -->
-  <text x="28" y="44" fill="#7E8A94" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="11" letter-spacing="3.5">VALORANT</text>
-  <text x="118" y="44" fill="#4A5560" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="11" letter-spacing="2">{REGION.upper()}</text>
-  <text x="532" y="44" text-anchor="end" fill="#ECE8E1" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" letter-spacing="0.5">{NAME}#{TAG}</text>
+  <text x="28" y="36" fill="#6B737C" font-family="Georgia, 'Times New Roman', serif" font-size="12" font-style="italic">valorant</text>
+  <text x="492" y="36" text-anchor="end" fill="#9AA3AD" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="12">{NAME}#{TAG} · {REGION.upper()}</text>
 
-  <!-- divider -->
-  <line x1="28" y1="58" x2="532" y2="58" stroke="#252D38" stroke-width="1"/>
+  <text x="28" y="92" fill="#F2EDE6" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="36" font-weight="560" letter-spacing="-0.5">{rank}</text>
+  <text x="492" y="78" text-anchor="end" fill="#6B737C" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="11" letter-spacing="1">RR</text>
+  <text x="492" y="112" text-anchor="end" fill="#F2EDE6" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="36" font-weight="560" letter-spacing="-0.5">{rr}</text>
 
-  <!-- current -->
-  <text x="28" y="86" fill="#7E8A94" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="10" letter-spacing="2.5">CURRENT</text>
-  <text x="28" y="128" fill="#ECE8E1" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="42" font-weight="650">{rank}</text>
+  <rect x="28" y="108" width="180" height="2" rx="1" fill="#1C232B"/>
+  <rect x="28" y="108" width="{fill:.1f}" height="2" rx="1" fill="#FF4655" opacity="0.7"/>
 
-  <!-- rr -->
-  <text x="320" y="86" fill="#7E8A94" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="10" letter-spacing="2.5">RR</text>
-  <text x="320" y="128" fill="#FF4655" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="42" font-weight="650">{rr}</text>
-
-  <!-- rr progress -->
-  <rect x="320" y="140" width="240" height="3" rx="1.5" fill="url(#barTrack)"/>
-  <rect x="320" y="140" width="{bar_w:.1f}" height="3" rx="1.5" fill="url(#red)"/>
-
-  <!-- peak row -->
-  <line x1="28" y1="162" x2="532" y2="162" stroke="#252D38" stroke-width="1"/>
-  <text x="28" y="184" fill="#7E8A94" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="10" letter-spacing="2.5">PEAK</text>
-  <text x="78" y="184" fill="#ECE8E1" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="16" font-weight="600">{peak_rank}</text>
-  <text x="420" y="184" text-anchor="end" fill="#7E8A94" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="10" letter-spacing="2.5">PEAK RR</text>
-  <text x="532" y="184" text-anchor="end" fill="#FF4655" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="16" font-weight="600">{peak_rr_label}</text>
+  <text x="28" y="148" fill="#6B737C" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="12">peak  <tspan fill="#D7DDE4" font-weight="600">{peak_rank}</tspan></text>
+  <text x="492" y="148" text-anchor="end" fill="#6B737C" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="12">peak rr  <tspan fill="#D7DDE4" font-weight="600">{peak_rr_label}</tspan></text>
 </svg>
 '''
 
