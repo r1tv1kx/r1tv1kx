@@ -34,12 +34,33 @@
 ---
 
 <p align="center">
-  <img src="https://github-readme-stats.shion.dev/api?username=r1tv1kx&amp;show_icons=true&amp;include_all_commits=true&amp;count_private=true&amp;show=reviews,prs_merged&amp;hide_border=true&amp;title_color=6A5ACD&amp;icon_color=6A5ACD&amp;text_color=57606a&amp;ring_color=6A5ACD&amp;bg_color=00000000" alt="GitHub stats" />
+  <img src="https://github-readme-stats.shion.dev/api?username=r1tv1kx&amp;show_icons=true&amp;include_all_commits=true&amp;count_private=true&amp;hide=prs,issues,contribs&amp;hide_rank=true&amp;number_format=long&amp;hide_border=true&amp;title_color=6A5ACD&amp;icon_color=6A5ACD&amp;text_color=57606a&amp;ring_color=6A5ACD&amp;bg_color=00000000" alt="GitHub stats" />
   <img src="https://github-readme-stats.shion.dev/api/top-langs/?username=r1tv1kx&amp;layout=compact&amp;langs_count=6&amp;hide_border=true&amp;title_color=6A5ACD&amp;text_color=57606a&amp;bg_color=00000000" alt="Top languages" />
 </p>
 
 <p align="center">
   <img src="https://streak-stats.demolab.com?user=r1tv1kx&amp;theme=dark&amp;hide_border=true&amp;background=00000000&amp;ring=6A5ACD&amp;fire=6A5ACD&amp;currStreakLabel=6A5ACD&amp;sideLabels=6A5ACD&amp;currStreakNum=c9d1d9&amp;sideNums=c9d1d9&amp;dates=57606a" alt="GitHub streak" />
+</p>
+
+<p align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=r1tv1kx&amp;theme=onedark&amp;no-frame=true&amp;no-bg=true&amp;column=4&amp;margin-w=12&amp;margin-h=8" alt="GitHub trophies" />
+</p>
+
+<p align="center">
+  <a href="https://github.com/r1tv1kx/Sentinel">
+    <img src="https://github-readme-stats.shion.dev/api/pin/?username=r1tv1kx&amp;repo=Sentinel&amp;hide_border=true&amp;title_color=6A5ACD&amp;icon_color=6A5ACD&amp;text_color=57606a&amp;bg_color=00000000" alt="Sentinel" />
+  </a>
+  <a href="https://github.com/r1tv1kx/safesphere">
+    <img src="https://github-readme-stats.shion.dev/api/pin/?username=r1tv1kx&amp;repo=safesphere&amp;hide_border=true&amp;title_color=6A5ACD&amp;icon_color=6A5ACD&amp;text_color=57606a&amp;bg_color=00000000" alt="safesphere" />
+  </a>
+</p>
+<p align="center">
+  <a href="https://github.com/r1tv1kx/DLP">
+    <img src="https://github-readme-stats.shion.dev/api/pin/?username=r1tv1kx&amp;repo=DLP&amp;hide_border=true&amp;title_color=6A5ACD&amp;icon_color=6A5ACD&amp;text_color=57606a&amp;bg_color=00000000" alt="DLP" />
+  </a>
+  <a href="https://github.com/r1tv1kx/digispark-hid-attack-lab">
+    <img src="https://github-readme-stats.shion.dev/api/pin/?username=r1tv1kx&amp;repo=digispark-hid-attack-lab&amp;hide_border=true&amp;title_color=6A5ACD&amp;icon_color=6A5ACD&amp;text_color=57606a&amp;bg_color=00000000" alt="digispark-hid-attack-lab" />
+  </a>
 </p>
 
 <p align="center">
