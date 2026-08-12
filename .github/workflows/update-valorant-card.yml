@@ -1,0 +1,33 @@
+name: Update Valorant card
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "scripts/update_valorant_card.py"
+      - ".github/workflows/update-valorant-card.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Generate card
+        run: python3 scripts/update_valorant_card.py
+
+      - name: Commit if changed
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git add valorant_card.svg
+          git commit -m "Update Valorant card" || echo "No changes"
+          git push
