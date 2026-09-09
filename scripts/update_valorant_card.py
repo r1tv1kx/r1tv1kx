@@ -5,6 +5,9 @@ from __future__ import annotations
 
 import json
 import re
+import sys
+import time
+import urllib.error
 import urllib.request
 from pathlib import Path
 
@@ -41,6 +44,29 @@ def rank_score(rank: str, rr: int) -> tuple[int, int]:
     return RANK_INDEX.get(rank.lower(), -1), rr
 
 
+def parse_mmr(text: str) -> tuple[str, int] | None:
+    m = re.match(r"^(.+?)\s*-\s*(\d+)\s*RR$", text, re.I)
+    if not m:
+        return None
+    return m.group(1).strip(), int(m.group(2))
+
+
+def load_cached_mmr() -> tuple[str, int] | None:
+    peak = load_json(PEAK_FILE, {})
+    rank, rr = peak.get("current_rank"), peak.get("current_rr")
+    if rank is not None and rr is not None:
+        return str(rank), int(rr)
+    if not OUT.exists():
+        return None
+    sizes = re.findall(
+        r'font-size="34"[^>]*>([^<]+)</text>',
+        OUT.read_text(encoding="utf-8"),
+    )
+    if len(sizes) >= 2 and sizes[1].strip().isdigit():
+        return sizes[0].strip(), int(sizes[1].strip())
+    return None
+
+
 def fetch_mmr() -> tuple[str, int]:
     req = urllib.request.Request(
         API,
@@ -49,12 +75,31 @@ def fetch_mmr() -> tuple[str, int]:
             "Accept": "text/plain",
         },
     )
-    with urllib.request.urlopen(req, timeout=30) as resp:
-        text = resp.read().decode("utf-8").strip()
-    m = re.match(r"^(.+?)\s*-\s*(\d+)\s*RR$", text, re.I)
-    if not m:
-        raise SystemExit(f"Unexpected MMR payload: {text!r}")
-    return m.group(1).strip(), int(m.group(2))
+    last_error = "unknown error"
+    for attempt in range(1, 4):
+        try:
+            with urllib.request.urlopen(req, timeout=20) as resp:
+                text = resp.read().decode("utf-8").strip()
+            parsed = parse_mmr(text)
+            if parsed:
+                return parsed
+            last_error = f"Unexpected MMR payload: {text!r}"
+        except urllib.error.HTTPError as exc:
+            body = exc.read().decode("utf-8", errors="replace").strip()
+            last_error = f"HTTP {exc.code}: {body or exc.reason}"
+        except (urllib.error.URLError, TimeoutError, OSError) as exc:
+            last_error = str(exc.reason if isinstance(exc, urllib.error.URLError) else exc)
+        if attempt < 3:
+            time.sleep(2 * attempt)
+
+    cached = load_cached_mmr()
+    if cached:
+        print(
+            f"MMR API unavailable ({last_error}); using cached {cached[0]}/{cached[1]} RR",
+            file=sys.stderr,
+        )
+        return cached
+    raise SystemExit(f"MMR fetch failed: {last_error}")
 
 
 def load_json(path: Path, default: dict) -> dict:
@@ -78,7 +123,13 @@ def resolve_peak(stats: dict, current_rank: str, current_rr: int) -> tuple[str, 
 
     save_json(
         PEAK_FILE,
-        {"peak_rank": peak_rank, "peak_rr": peak_rr, "peak_act": peak_act},
+        {
+            "peak_rank": peak_rank,
+            "peak_rr": peak_rr,
+            "peak_act": peak_act,
+            "current_rank": current_rank,
+            "current_rr": current_rr,
+        },
     )
     return peak_rank, peak_act
 
